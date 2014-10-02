@@ -14,6 +14,7 @@ class TestBunch(unittest.TestCase):
 
     def test_pretty(self):
         b = Bunch(name="James", profession="Data Scientist")
+        p = b.pretty()
         self.assertTrue("name: James" in p)
         self.assertTrue("profession: Data Scientist" in p)
         self.assertEqual(len(p.splitlines()), 2, "Too many lines in output.")
