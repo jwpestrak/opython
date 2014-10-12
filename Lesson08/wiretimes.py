@@ -10,11 +10,8 @@ fnme = 'wireshark.bin'
 
 os.chdir(stem)
 tmstmp_lst = []
-f = open(fname, 'rb')
-    while True:
-        x = unpack(f.readline())
-        tmstmp_lst.append(x) 
-f.close()
 
-for ts in tmstmp_lst:
-    print(ts)
+with open("wireshark.bin", "rb") as f:
+    header = f.read(24)
+    vals = struct.unpack('<IHHiIII', header)
+    print(vals)
