@@ -40,7 +40,7 @@ class Address(object):
     def set_state(self, value):
         pat = re.compile("[A-Z]{2}")
         if not pat.search(value):
-            raise StateError
+            raise StateError('The state attribute must be a two-character, upper case, alphabetic string!')
         self._state = value
     def del_state(self):
         raise AttributeError
@@ -51,7 +51,7 @@ class Address(object):
     def set_zip_code(self, value):
         pat = re.compile("[0-9]{5}")
         if not pat.search(value):
-            raise ZipCodeError
+            raise ZipCodeError("The zip_code attribute must a five-digit integer! (leadings zeros are permitted)")
         self._zip_code = value
     def del_zip_code(self):
         raise AttributeError
