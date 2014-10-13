@@ -49,10 +49,12 @@ class Address(object):
     def zip_code(self):
         return self._zip_code
     def set_zip_code(self, value):
-        pat = re.compile("[0-9]{5}")
+        pat = re.compile("^[0-9]{5}$")
         if not pat.search(value):
-            raise ZipCodeError("The zip_code attribute must a five-digit integer! (leadings zeros are permitted)")
+            raise ZipCodeError("The zip_code attribute must a five-character string of integers! (leadings zeros are permitted)")
         self._zip_code = value
     def del_zip_code(self):
         raise AttributeError
     zip_code = property(zip_code, set_zip_code, del_zip_code)
+    def del_city(self):
+        raise AttributeError
