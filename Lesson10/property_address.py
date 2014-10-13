@@ -1,5 +1,11 @@
 import re
 
+class StateError(Exception):
+    pass
+
+class ZipCodeError(Exception):
+    pass
+
 class Address(object):
 
     def __init__(self, name, street_address, city, state, zip_code):
