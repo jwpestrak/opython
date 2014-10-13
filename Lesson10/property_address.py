@@ -11,15 +11,23 @@ class Address(object):
 
     def name(self):
         return self._name
-    name = property(name)
+    def set_name(self, value):
+        raise AttributeError
+    def del_name(self):
+        raise AttributeError
+    name = property(name, set_name, del_name)
 
     def street_address(self):
         return self._street_address
-    street_address = property(street_address)
+    def set_street_address(self, value):
+        self._street_address = value
+    street_address = property(street_address, set_street_address)
 
     def city(self):
         return self._city
-    city = property(city)
+    def set_city(self, value):
+        self._city = value
+    city = property(city, set_city)
 
     def state(self):
         return self._state
@@ -28,7 +36,9 @@ class Address(object):
         if not pat.search(value):
             raise StateError
         self._state = value
-    state = property(state, set_state)
+    def del_state(self):
+        raise AttributeError
+    state = property(state, set_state, del_state)
 
     def zip_code(self):
         return self._zip_code
@@ -37,6 +47,6 @@ class Address(object):
         if not pat.search(value):
             raise ZipCodeError
         self._zip_code = value
-    state = property(zip_code, set_zip_code)
-
-
+    def del_zip_code(self):
+        raise AttributeError
+    zip_code = property(zip_code, set_zip_code, del_zip_code)
