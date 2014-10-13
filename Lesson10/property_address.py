@@ -56,5 +56,3 @@ class Address(object):
     def del_zip_code(self):
         raise AttributeError
     zip_code = property(zip_code, set_zip_code, del_zip_code)
-    def del_city(self):
-        raise AttributeError
