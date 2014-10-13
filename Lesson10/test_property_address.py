@@ -27,8 +27,8 @@ class TestAddresses(unittest.TestCase):
 
     def test_zip_code(self):
         self.assertEqual(self.home.zip_code, '12345')
-        self.assertRaises(ZipCodeError, setattr, self.home, 'zip_codde', '123456')
-        self.home.state = '54321'
+        self.assertRaises(ZipCodeError, setattr, self.home, 'zip_code', '123456')
+        self.home.zip_code = '54321'
         self.assertEqual(self.home.zip_code, '54321')
     
 if __name__ == "__main__":
