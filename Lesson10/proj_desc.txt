@@ -1,0 +1,22 @@
+Create a program named property_address.py, including the following:
+
+The custom exceptions StateError and ZipCodeError
+
+Class Address that takes 
+    name, 
+    street_address, 
+    city, 
+    state, and 
+    zip_code 
+as string arguments, which must then be set as attributes.
+You may turn any or all of these attributes into properties in order to solve 
+    this assignment as long as the also meet these requirements:
+        
+    After being set in __init__, the name attribute is read-only.
+    Further attempts to modify it will trigger an AttributeError.
+
+    Zip code must follow the simple US pattern (nnnnn) or it throws a ZipCode error.
+
+    State only allows 2 capital letters or it throws a StateError
+
+State and Zip code validation must be done by regular expressions.  
